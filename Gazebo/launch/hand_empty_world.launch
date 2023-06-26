@@ -1,0 +1,43 @@
+<launch>
+
+    <!-- Generate/Load robot description file -->
+    <include file="$(find anael_description)/launch/gazebo.launch"/>
+
+    <!-- Launch Gazebo -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find anael_gazebo)/worlds/empty.world"/>
+        <arg name="paused" value="true"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+	<arg name="headless" value="false"/>
+        <arg name="recording" value="false"/>
+        <arg name="debug" value="false"/>
+        <arg name="verbose" value="true"/>
+    </include>
+
+    <!-- Spawn urdf into Gazebo -->
+   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model anael -x 0 -y 0 -z 0.3 
+		-J bilekyaj 0.0
+		-J bilekssj 0.0
+		-J basj1 0.0
+		-J basj2 0.0
+		-J basj3 -0.1
+		-J basj4 -0.1
+		-J ij1 0.0
+		-J ij3 -0.1
+		-J ij4 -0.1
+		-J ij5 -0.1
+		-J oj1 0.0
+		-J oj3 -0.1
+		-J oj4 -0.1
+		-J oj5 -0.1
+		-J yj1 0.0
+		-J yj3 -0.1
+		-J yj4 -0.1
+		-J yj5 -0.1
+		-J sj1 0.0
+		-J sj3 -0.1
+		-J sj4 -0.1
+		-J sj5 -0.1 " 
+   respawn="false" output="screen"/>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+  <param command="$(find xacro)/xacro $(find anael_description)/urdf/anael.xacro" name="robot_description"/>
+
+  <include file="$(find anael_control)/launch/anael_controller.launch"/>
+
+</launch>

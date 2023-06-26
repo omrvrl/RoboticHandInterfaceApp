@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find anael_control)/config/anael_controller.yaml" command="load"/> 
+ 
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/anael" args="
+        joint_state_controller
+	bilekssj_position_controller 
+	bilekyaj_position_controller
+        basj1_position_controller
+        basj2_position_controller
+	basj3_position_controller
+        basj4_position_controller
+	ij1_position_controller
+	ij3_position_controller
+	ij4_position_controller
+	ij5_position_controller
+	oj1_position_controller
+	oj3_position_controller
+	oj4_position_controller
+	oj5_position_controller
+	yj1_position_controller
+	yj3_position_controller
+	yj4_position_controller
+	yj5_position_controller
+	sj1_position_controller
+	sj3_position_controller
+	sj4_position_controller
+	sj5_position_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+  </node>
+  
+</launch>

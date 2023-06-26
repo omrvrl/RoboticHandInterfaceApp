@@ -1,0 +1,96 @@
+anael:
+  # Publish all joint states -----------------------------------
+  # Creates the /joint_states topic necessary in ROS
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  bilekssj_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bilekssj
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  bilekyaj_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bilekyaj
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  basj1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: basj1
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  basj2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: basj2
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  basj3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: basj3
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  basj4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: basj4
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  ij1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: ij1
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  ij3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: ij3
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  ij4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: ij4
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  ij5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: ij5
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  oj1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: oj1
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  oj3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: oj3
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  oj4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: oj4
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  oj5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: oj5
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  yj1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: yj1
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  yj3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: yj3
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  yj4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: yj4
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  yj5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: yj5
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  sj1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: sj1
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  sj3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: sj3
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  sj4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: sj4
+    pid: {p: 100.0, i: 30.0, d: 0.1}
+  sj5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: sj5
+    pid: {p: 100.0, i: 30.0, d: 0.1}

@@ -1,0 +1,890 @@
+<?xml version="1.0" ?>
+<robot name="anael" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find anael_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find anael_description)/urdf/anael.trans" />
+<xacro:include filename="$(find anael_description)/urdf/anael.gazebo" />
+
+<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/anael</robotNamespace>
+    </plugin>
+</gazebo>
+
+ <xacro:property name="PI" value="3.14159265359"/>
+ <xacro:property name="mass" value="0.1" /> 
+ <xacro:property name="x" value="0.025" />
+ <xacro:property name="y" value="0.1" /> 
+ <xacro:property name="z" value="0.025" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.10002682557543335 0.012769323705889093 0.07709696684718728"/>
+    <mass value="0.23588508306984027"/>
+    <inertia ixx="0.000089685" ixy="0.0" ixz="-0.0" iyy="0.0001505" iyz="0.0" izz="0.00013183"/>
+  </inertial>
+  <visual>
+    <origin rpy="1.5 0 4" xyz="0.3 0 0"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bilekss_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.27316457494287e-05 0.014975284308614334 0.006249999999999964"/>
+    <mass value="0.06116058629875486"/>
+    <inertia ixx="0.000008005" ixy="-0.0" ixz="0.0" iyy="0.000011149" iyz="0.0" izz="0.000017562"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 -0.035 -0.071"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bilekss_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 -0.035 -0.071"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bilekss_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="el_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.012835401921183695 0.048777298438696076 0.007642721088233481"/>
+    <mass value="0.702343206321419"/>
+    <inertia ixx="0.00074524" ixy="0.0" ixz="0.0" iyy="0.00082904" iyz="0.0" izz="0.001485"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.112348 -0.062569 -0.07725"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/el_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.112348 -0.062569 -0.07725"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/el_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bilekmakya_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.002500088024158964 -1.4037957827742198e-05 -6.661338147750939e-16"/>
+    <mass value="0.005498755569902937"/>
+    <inertia ixx="2.0658e-7" ixy="0.0" ixz="-0.0" iyy="1.1495e-7" iyz="-0.0" izz="1.1532e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.102598 -0.062515 -0.07725"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bilekmakya_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.102598 -0.062515 -0.07725"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bilekmakya_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bilekmakss_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.2073675392798577e-15 -2.7755575615628914e-17 0.002500000000000238"/>
+    <mass value="0.005498755569902937"/>
+    <inertia ixx="1.1456e-7" ixy="0.0" ixz="0.0" iyy="1.1456e-7" iyz="0.0" izz="2.0621e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 -0.035 -0.07475"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bilekmakss_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 -0.035 -0.07475"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bilekmakss_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="bas1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.005673915058689145 0.011055433620382665 -0.007628462814600764"/>
+    <mass value="0.06128758784766406"/>
+    <inertia ixx="0.000011298" ixy="0.0" ixz="-0.0" iyy="0.0000064231" iyz="0.0" izz="0.00001536"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.062528 -0.092533 -0.083767"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.062528 -0.092533 -0.083767"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="bas2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.020392823064728817 0.012419984525536498 6.508410954234045e-05"/>
+    <mass value="0.08029006275726228"/>
+    <inertia ixx="0.000009108" ixy="0.0" ixz="0.0" iyy="0.000020032" iyz="-0.0" izz="0.000024305"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.049989 -0.099971 -0.076271"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.049989 -0.099971 -0.076271"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bas3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.013173602102555821 0.011769487003394322 -0.0008753119918628732"/>
+    <mass value="0.0436563439389364"/>
+    <inertia ixx="0.000004861" ixy="0.0" ixz="-0.0" iyy="0.000004917" iyz="0.0" izz="0.000007783"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.01464 -0.124406 -0.076285"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.01464 -0.124406 -0.076285"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="bas4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.015921842905640034 0.014490313495941293 -0.0033529053849926244"/>
+    <mass value="0.05495371153395965"/>
+    <inertia ixx="0.000008734" ixy="0.0" ixz="0.0" iyy="0.000008839" iyz="0.0" izz="0.000013838"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.00795 -0.146901 -0.073509"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.00795 -0.146901 -0.073509"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/bas4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="i1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.6796940591576326e-05 -0.0002604854005841817 -0.0023322948385045422"/>
+    <mass value="0.00767828320566423"/>
+    <inertia ixx="2.9216e-7" ixy="-0.0" ixz="-0.0" iyy="2.9692e-7" iyz="0.0" izz="5.071e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.06223 -0.146535 -0.078797"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.06223 -0.146535 -0.078797"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0020180489586227313 0.011472340663435499 -0.0017851926234861565"/>
+    <mass value="0.014034991016966505"/>
+    <inertia ixx="0.000001012" ixy="0.0" ixz="0.0" iyy="5.6343e-7" iyz="-0.0" izz="7.3032e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.063094 -0.152358 -0.073801"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.063094 -0.152358 -0.073801"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0021612969641609456 0.01887681074886277 -0.001082047758521748"/>
+    <mass value="0.04193790296481513"/>
+    <inertia ixx="0.0000075677" ixy="0.0" ixz="-0.0" iyy="0.0000021172" iyz="0.0" izz="0.0000077397"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.061613 -0.170802 -0.071311"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.061613 -0.170802 -0.071311"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0022404721280600767 0.020061065664474076 -0.0031825316742030707"/>
+    <mass value="0.0479861517111094"/>
+    <inertia ixx="0.0000101" ixy="0.0" ixz="-0.0" iyy="0.0000028047" iyz="0.0" izz="0.0000099684"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.059392 -0.2056 -0.06828"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.059392 -0.2056 -0.06828"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.002130576123605177 0.018422904227623937 -0.004389890187645032"/>
+    <mass value="0.04261604760031565"/>
+    <inertia ixx="0.0000077755" ixy="0.0" ixz="-0.0" iyy="0.0000026174" iyz="0.0" izz="0.0000074786"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.057 -0.24295 -0.061703"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.057 -0.24295 -0.061703"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/i5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="o1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.0750374228735149e-06 -0.0002606606302434922 -0.002332323827817992"/>
+    <mass value="0.00767828315309844"/>
+    <inertia ixx="2.887e-7" ixy="-0.0" ixz="-0.0" iyy="2.9692e-7" iyz="0.0" izz="5.0364e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.08721 -0.15017 -0.083799"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.08721 -0.15017 -0.083799"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="o2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-6.998296994781272e-05 0.012580902590559467 -0.0017842031247212453"/>
+    <mass value="0.014034991016966505"/>
+    <inertia ixx="9.9062e-7" ixy="0.0" ixz="0.0" iyy="5.4144e-7" iyz="-0.0" izz="6.87e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.087184 -0.154923 -0.078802"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.087184 -0.154923 -0.078802"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="o3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.001013122180829662 0.020360429581470052 -0.0012243834406794885"/>
+    <mass value="0.04651721860873003"/>
+    <inertia ixx="0.0000094543" ixy="0.0" ixz="-0.0" iyy="0.0000022536" iyz="0.0" izz="0.0000094714"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.088076 -0.17443 -0.076313"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.088076 -0.17443 -0.076313"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="o4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0010111780533361286 0.02016057249272915 -0.0031832672255033972"/>
+    <mass value="0.04798615199736914"/>
+    <inertia ixx="0.000010081" ixy="0.0" ixz="-0.0" iyy="0.0000026377" iyz="0.0" izz="0.0000097827"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.087966 -0.212287 -0.073023"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.087966 -0.212287 -0.073023"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="o5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0010020456775493847 0.018519173382804927 -0.004389579199767339"/>
+    <mass value="0.04261650941764633"/>
+    <inertia ixx="0.0000077626" ixy="0.0" ixz="-0.0" iyy="0.0000024959" iyz="0.0" izz="0.0000073443"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.087859 -0.249713 -0.066445"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.087859 -0.249713 -0.066445"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/o5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="y1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.4963942569848343e-05 -0.0002602423091445649 -0.002332295138946422"/>
+    <mass value="0.007678283205664206"/>
+    <inertia ixx="2.916e-7" ixy="0.0" ixz="0.0" iyy="2.9692e-7" iyz="0.0" izz="5.0655e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.112229 -0.14681 -0.080797"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.112229 -0.14681 -0.080797"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="y2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0007125648758543046 0.012820757548843403 -0.001293941486414249"/>
+    <mass value="0.013205329141038821"/>
+    <inertia ixx="7.8012e-7" ixy="-0.0" ixz="-0.0" iyy="3.5766e-7" iyz="-0.0" izz="6.8004e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.112493 -0.151556 -0.0758"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.112493 -0.151556 -0.0758"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="y3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00015491426059491276 0.018999154362316917 -0.001266040260634177"/>
+    <mass value="0.043154401170921036"/>
+    <inertia ixx="0.0000078043" ixy="-0.0" ixz="0.0" iyy="0.0000021736" iyz="0.0" izz="0.0000079402"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.114574 -0.170971 -0.073311"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.114574 -0.170971 -0.073311"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="y4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00022075120406518656 0.020184574342805184 -0.00318254574704141"/>
+    <mass value="0.04798615252632859"/>
+    <inertia ixx="0.000010102" ixy="-0.0" ixz="0.0" iyy="0.0000027748" iyz="0.0" izz="0.0000099402"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.11661 -0.205781 -0.07028"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.11661 -0.205781 -0.07028"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="y5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0001293643122072391 0.018545303080616332 -0.004389928487263772"/>
+    <mass value="0.042615407205845585"/>
+    <inertia ixx="0.0000077764" ixy="-0.0" ixz="0.0" iyy="0.0000025973" iyz="0.0" izz="0.0000074594"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.118788 -0.243144 -0.063703"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.118788 -0.243144 -0.063703"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/y5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="s1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.514987007653068e-05 -0.00026079424915367855 -0.002332266895182955"/>
+    <mass value="0.007678283206677622"/>
+    <inertia ixx="2.9163e-7" ixy="0.0" ixz="0.0" iyy="2.9692e-7" iyz="0.0" izz="5.0657e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.137248 -0.14345 -0.078795"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.137248 -0.14345 -0.078795"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0007208392585435763 0.012820622510178598 -0.0012939113521195228"/>
+    <mass value="0.013205323711603097"/>
+    <inertia ixx="7.802e-7" ixy="-0.0" ixz="-0.0" iyy="3.5782e-7" iyz="-0.0" izz="6.8033e-7"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.137514 -0.148195 -0.073798"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.137514 -0.148195 -0.073798"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00016620402647835042 0.018999119251503604 -0.0012660129322788344"/>
+    <mass value="0.043154401166728466"/>
+    <inertia ixx="0.0000078043" ixy="-0.0" ixz="0.0" iyy="0.000002175" iyz="0.0" izz="0.0000079416"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.139607 -0.167609 -0.071309"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.139607 -0.167609 -0.071309"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0001562325757559213 0.018816821489514413 -0.0029150851282655765"/>
+    <mass value="0.04315440116672846"/>
+    <inertia ixx="0.0000080578" ixy="-0.0" ixz="0.0" iyy="0.0000024045" iyz="0.0" izz="0.0000079632"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.141663 -0.202417 -0.068278"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.141663 -0.202417 -0.068278"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00014104109701251755 0.018545759375697635 -0.004389614211409633"/>
+    <mass value="0.042615679526844315"/>
+    <inertia ixx="0.0000077764" ixy="-0.0" ixz="0.0" iyy="0.0000025984" iyz="0.0" izz="0.0000074606"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.143697 -0.236829 -0.06222"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.143697 -0.236829 -0.06222"/>
+    <geometry>
+      <mesh filename="package://anael_description/meshes/s5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_link">
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+       <box size="0.025 0.1 0.025"/>
+    </geometry>
+  </collision>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+       <box size="0.025 0.1 0.025"/>
+    </geometry>
+  </visual>
+  <inertial>
+    <mass value="${mass}" />
+    <origin xyz="0 0 0" />
+    <inertia ixx="${0.0833333 * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
+      iyy="${0.0833333 * mass * (x*x + z*z)}" iyz="0.0"
+      izz="${0.0833333 * mass * (x*x + y*y)}" />
+  </inertial>
+</link>
+
+<!--"0.1 0.035 0.071"-->
+<joint name="bilekssj" type="revolute">
+  <origin rpy="1.5 0 4" xyz="0.1866 -0.0258 0.04"/>
+  <parent link="base_link"/>
+  <child link="bilekss_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit effort="5.0" lower="-0.785398" upper="0.785398" velocity="1.0"/>
+</joint>
+
+<joint name="bilekyaj" type="revolute">
+  <origin rpy="0 0 0" xyz="0.012348 0.027569 0.00625"/>
+  <parent link="bilekss_1"/>
+  <child link="el_1"/>
+  <axis xyz="0.999985 0.00553 -0.0"/>
+  <limit effort="5.0" lower="-1.48353" upper="0.0" velocity="1.0"/>
+</joint>
+
+<joint name="makya" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.00975 -5.4e-05 0.0"/>
+  <parent link="el_1"/>
+  <child link="bilekmakya_1"/>
+</joint>
+
+<joint name="makss" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.00375"/>
+  <parent link="bilekss_1"/>
+  <child link="bilekmakss_1"/>
+</joint>
+
+
+<joint name="basj1" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.04982 0.029964 0.006517"/>
+  <parent link="el_1"/>
+  <child link="bas1_1"/>
+  <axis xyz="3e-06 -0.000563 1.0"/>
+  <limit effort="10.0" lower="-0.244346" upper="-0.0" velocity="1.0"/>
+</joint>
+
+
+<joint name="basj2" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.012539 0.007438 -0.007496"/>
+  <parent link="bas1_1"/>
+  <child link="bas2_1"/>
+  <axis xyz="0.005277 -0.999986 -0.000563"/>
+  <limit effort="0.05" lower="0.0" upper="1.570796" velocity="1.0"/>
+</joint>
+
+<joint name="basj3" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.035349 0.024435 1.4e-05"/>
+  <parent link="bas2_1"/>
+  <child link="bas3_1"/>
+  <axis xyz="0.703366 0.710828 0.000398"/>
+  <limit effort="0.05" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+
+<joint name="basj4" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.02259 0.022495 -0.002776"/>
+  <parent link="bas3_1"/>
+  <child link="bas4_1"/>
+  <axis xyz="0.703366 0.710828 0.000398"/>
+  <limit effort="0.05" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+
+<joint name="ij1" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.050118 0.083966 0.001547"/>
+  <parent link="el_1"/>
+  <child link="i1_1"/>
+  <axis xyz="-3e-06 0.000563 -1.0"/>
+  <limit effort="0.2" lower="-0.349066" upper="0.349066" velocity="1.0"/>
+</joint>
+
+<joint name="ij2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.000864 0.005823 -0.004996"/>
+  <parent link="i1_1"/>
+  <child link="i2_1"/>
+</joint>
+
+<joint name="ij3" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.001481 0.018444 -0.00249"/>
+  <parent link="i2_1"/>
+  <child link="i3_1"/>
+  <axis xyz="0.997782 0.066568 3.4e-05"/>
+  <limit effort="0.2" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="ij4" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.002221 0.034798 -0.003031"/>
+  <parent link="i3_1"/>
+  <child link="i4_1"/>
+  <axis xyz="0.997782 0.066568 3.4e-05"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="ij5" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.002392 0.03735 -0.006577"/>
+  <parent link="i4_1"/>
+  <child link="i5_1"/>
+  <axis xyz="0.997782 0.066568 3.4e-05"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+
+<joint name="oj1" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.025138 0.087601 0.006549"/>
+  <parent link="el_1"/>
+  <child link="o1_1"/>
+  <axis xyz="-3e-06 0.000563 -1.0"/>
+  <limit effort="0.2" lower="-0.349066" upper="0.349066" velocity="1.0"/>
+</joint>
+
+<joint name="oj2" type="fixed">
+  <origin rpy="0 0 0" xyz="-2.6e-05 0.004753 -0.004997"/>
+  <parent link="o1_1"/>
+  <child link="o2_1"/>
+</joint>
+
+<joint name="oj3" type="revolute">
+  <origin rpy="0 0 0" xyz="0.000892 0.019507 -0.002489"/>
+  <parent link="o2_1"/>
+  <child link="o3_1"/>
+  <axis xyz="0.999985 0.00553 -0.0"/>
+  <limit effort="0.2" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="oj4" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.00011 0.037857 -0.00329"/>
+  <parent link="o3_1"/>
+  <child link="o4_1"/>
+  <axis xyz="0.999985 0.00553 -0.0"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="oj5" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.000107 0.037426 -0.006578"/>
+  <parent link="o4_1"/>
+  <child link="o5_1"/>
+  <axis xyz="0.999985 0.00553 -0.0"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+
+<joint name="yj1" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.000119 0.084241 0.003547"/>
+  <parent link="el_1"/>
+  <child link="y1_1"/>
+  <axis xyz="-3e-06 0.000563 -1.0"/>
+  <limit effort="0.2" lower="-0.349066" upper="0.349066" velocity="1.0"/>
+</joint>
+
+<joint name="yj2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.000264 0.004746 -0.004997"/>
+  <parent link="y1_1"/>
+  <child link="y2_1"/>
+</joint>
+
+<joint name="yj3" type="revolute">
+  <origin rpy="0 0 0" xyz="0.002081 0.019415 -0.002489"/>
+  <parent link="y2_1"/>
+  <child link="y3_1"/>
+  <axis xyz="0.998457 -0.055528 -3.4e-05"/>
+  <limit effort="0.2" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="yj4" type="revolute">
+  <origin rpy="0 0 0" xyz="0.002036 0.03481 -0.003031"/>
+  <parent link="y3_1"/>
+  <child link="y4_1"/>
+  <axis xyz="0.998457 -0.055528 -3.4e-05"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="yj5" type="revolute">
+  <origin rpy="0 0 0" xyz="0.002178 0.037363 -0.006577"/>
+  <parent link="y4_1"/>
+  <child link="y5_1"/>
+  <axis xyz="0.998457 -0.055528 -3.4e-05"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+
+<joint name="sj1" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0249 0.080881 0.001545"/>
+  <parent link="el_1"/>
+  <child link="s1_1"/>
+  <axis xyz="-3e-06 0.000563 -1.0"/>
+  <limit effort="0.2" lower="-0.261799" upper="0.261799" velocity="1.0"/>
+</joint>
+
+<joint name="sj2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.000266 0.004745 -0.004997"/>
+  <parent link="s1_1"/>
+  <child link="s2_1"/>
+</joint>
+
+<joint name="sj3" type="revolute">
+  <origin rpy="0 0 0" xyz="0.002093 0.019414 -0.002489"/>
+  <parent link="s2_1"/>
+  <child link="s3_1"/>
+  <axis xyz="0.998424 -0.056113 -3.5e-05"/>
+  <limit effort="0.2" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="sj4" type="revolute">
+  <origin rpy="0 0 0" xyz="0.002056 0.034808 -0.003031"/>
+  <parent link="s3_1"/>
+  <child link="s4_1"/>
+  <axis xyz="0.998424 -0.056113 -3.5e-05"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+<joint name="sj5" type="revolute">
+  <origin rpy="0 0 0" xyz="0.002034 0.034412 -0.006058"/>
+  <parent link="s4_1"/>
+  <child link="s5_1"/>
+  <axis xyz="0.998424 -0.056113 -3.5e-05"/>
+  <limit effort="0.1" lower="-1.48353" upper="-0.087266" velocity="1.0"/>
+</joint>
+
+
+<link name="world"/>
+<joint name="world_to_joint" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint> 
+<joint name="world_to_camera" type="fixed">
+  <origin rpy="0 0 2.54159265359 " xyz="0.7 -0.4 0.15 "/>
+  <parent link="world"/>
+  <child link="camera_link"/>
+</joint> 
+
+</robot>
